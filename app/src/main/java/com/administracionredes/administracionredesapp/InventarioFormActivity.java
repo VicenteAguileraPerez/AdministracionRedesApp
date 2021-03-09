@@ -11,5 +11,6 @@ public class InventarioFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventario_form);
         //Mario Alberto
+        //Gradle
     }
 }
