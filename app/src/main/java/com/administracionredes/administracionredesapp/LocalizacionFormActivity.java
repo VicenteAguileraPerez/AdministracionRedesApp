@@ -11,5 +11,7 @@ public class LocalizacionFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizacion_form);
         //Antonio García
+
+        //Agregué archivos gradle
     }
 }
