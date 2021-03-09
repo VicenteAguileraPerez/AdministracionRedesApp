@@ -10,6 +10,6 @@ public class LocalizacionFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizacion_form);
-        //Edgar Manuel
+        //Antonio García
     }
 }
