@@ -10,6 +10,6 @@ public class InventarioFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventario_form);
-        //Edgar Manuel
+        //Mario Alberto
     }
 }
