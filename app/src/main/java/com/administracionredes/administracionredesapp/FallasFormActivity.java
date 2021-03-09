@@ -10,6 +10,6 @@ public class FallasFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fallas_form);
-        //Edgar Manuel
+
     }
 }
