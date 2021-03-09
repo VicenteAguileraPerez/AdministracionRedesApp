@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AdministracionRedesApp.iml" filepath="$PROJECT_DIR$/AdministracionRedesApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AdministracionRedesApp.iml" filepath="$PROJECT_DIR$/.idea/AdministracionRedesApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AdministracionRedesApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AdministracionRedesApp.app.iml" />
     </modules>
   </component>
