@@ -149,8 +149,6 @@ public class FirebaseHelper
                                         document.getData().get("TIPO").toString(),document.getData().get("LOCALIZACION").toString(), document.getData().get("STATUS").toString(),
                                         document.getData().get("OBSERVACIONES").toString());
                                 datos.add(localizacion);
-
-
                             }
                             data.arrayList(datos);
                         } else {
