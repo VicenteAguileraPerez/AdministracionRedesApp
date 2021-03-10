@@ -10,10 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdministracionRedesApp">
         <activity android:name=".FallasFormActivity"></activity>
-        <activity android:name=".FallasListaActivity"/>
-        <activity android:name=".LocalizacionFormActivity"/>
-        <activity android:name=".LocalizacionListaActivity"/>
-           
+        <activity android:name=".FallasListaActivity" />
+        <activity android:name=".LocalizacionFormActivity" />
+        <activity android:name=".LocalizacionListaActivity" />
     </application>
-
 </manifest>
