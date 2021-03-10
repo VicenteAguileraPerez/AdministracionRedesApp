@@ -9,14 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdministracionRedesApp">
-        <activity android:name=".LocalizacionFormActivity"></activity>
-        <activity android:name=".LocalizacionListaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".FallasFormActivity"></activity>
+        <activity android:name=".FallasListaActivity"/>
+        <activity android:name=".LocalizacionFormActivity"/>
+        <activity android:name=".LocalizacionListaActivity"/>
+           
     </application>
 
 </manifest>
