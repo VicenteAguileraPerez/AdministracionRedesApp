@@ -33,6 +33,7 @@ public class LocalizacionListaActivity extends AppCompatActivity {
         arrayList();
     }
 
+    //Haciendo un comentario para ver comportamiento
     public void abrirActividad() {
         Intent intent = new Intent(this, LocalizacionFormActivity.class);
         startActivity(intent);
