@@ -3,10 +3,12 @@ package com.administracionredes.administracionredesapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import com.administracionredes.administracionredesapp.adapters.AdapterItemConfiguraciones;
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.Data;
@@ -25,7 +27,7 @@ public class ConfiguracionesListaActivity extends AppCompatActivity implements D
     @Override
     protected void onResume() {
         super.onResume();
-        new FirebaseHelper().leerFalla(ConfiguracionesListaActivity.this, Collections.FALLAS.toString());
+        new FirebaseHelper().leerConfiguracion(ConfiguracionesListaActivity.this, Collections.CONFIGURACION.toString());
     }
 
     @Override

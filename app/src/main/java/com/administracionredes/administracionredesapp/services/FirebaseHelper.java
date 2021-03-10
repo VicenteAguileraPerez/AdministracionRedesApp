@@ -117,12 +117,10 @@ public class FirebaseHelper {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 //objeto
                                 //{"NOMBRE","TIPO", "STATUS","OBSERVACIONES"};
-
-                                Inventario inventario = new Inventario(document.getId(),document.getData().get("NOMBRE").toString(),
+                                Inventario inventario = new Inventario(document.getId(), document.getData().get("NOMBRE").toString(),
                                         document.getData().get("TIPO").toString(), document.getData().get("STATUS").toString(),
                                         document.getData().get("OBSERVACIONES").toString());
                                 datos.add(inventario);
-
                             }
                             data.arrayList(datos);
                         } else {

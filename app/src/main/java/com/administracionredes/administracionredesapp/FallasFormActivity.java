@@ -1,9 +1,11 @@
 package com.administracionredes.administracionredesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;
@@ -81,5 +83,15 @@ public class FallasFormActivity extends AppCompatActivity implements Status {
     @Override
     public void status(String mensaje) {
         Toast.makeText(FallasFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+        if (mensaje.contains("exitosa")) {
+            clean();
+        }
+    }
+
+    public void clean() {
+        textInputLayout_guia.getEditText().setText("");
+        textInputLayout_dispositivo.getEditText().setText("");
+        textInputLayout__tipo_de_falla.getEditText().setText("");
+        textInputLayout_observaciones.getEditText().setText("");
     }
 }

@@ -1,9 +1,11 @@
 package com.administracionredes.administracionredesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;
@@ -37,7 +39,7 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
         textInputLayout_status = findViewById(R.id.textInputLayout_status);
         textInputLayout_tipo = findViewById(R.id.textInputLayout_tipo);
         materialButton_agregar = findViewById(R.id.button_agregar);
-
+        getDatos();
 
         materialButton_agregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +88,7 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
             textInputLayout_nombre_dispositivo.getEditText().setText(inventario.getNombre_dispositivo());
             textInputLayout_observaciones.getEditText().setText(inventario.getObservaciones());
             textInputLayout_status.getEditText().setText(inventario.getStatus());
-            textInputLayout_tipo.getEditText().setText(inventario.getStatus());
+            textInputLayout_tipo.getEditText().setText(inventario.getTipo());
             materialButton_agregar.setText("Editar Device");
         }
     }

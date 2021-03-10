@@ -3,10 +3,12 @@ package com.administracionredes.administracionredesapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import com.administracionredes.administracionredesapp.adapters.AdapterItemInventario;
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.Data;
@@ -14,23 +16,19 @@ import com.administracionredes.administracionredesapp.helpers.Status;
 import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.services.FirebaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
-
-
 public class InventarioListaActivity extends AppCompatActivity implements Data, Status {
-
     private FloatingActionButton floatingActionButton;
     private ArrayList<Inventario> arrayList;
     private RecyclerView recyclerView;
 
-
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         new FirebaseHelper().leerInventario(InventarioListaActivity.this, Collections.INVENTARIO.toString());
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +42,12 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
                 abrirActividad();
             }
         });
-
     }
 
     public void abrirActividad() {
         Intent intent = new Intent(this, InventarioFormActivity.class);
         startActivity(intent);
     }
-
-
-
 
     @Override
     public void arrayList(ArrayList<Object> data) {
@@ -65,14 +59,11 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
         llenar(arrayList);
     }
 
-
-    public void llenar(ArrayList<Inventario> Inventario) {
-        recyclerView.setAdapter(new AdapterItemInventario(Inventario, InventarioListaActivity.this,InventarioListaActivity.this));
+    public void llenar(ArrayList<Inventario> inventario) {
+        recyclerView.setAdapter(new AdapterItemInventario(inventario, InventarioListaActivity.this, InventarioListaActivity.this));
         StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);
     }
-
-
 
     @Override
     public void id(String id) {
@@ -83,6 +74,4 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
     public void status(String mensaje) {
         Toast.makeText(InventarioListaActivity.this, mensaje, Toast.LENGTH_SHORT).show();
     }
-
-
 }
