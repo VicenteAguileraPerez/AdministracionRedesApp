@@ -28,6 +28,12 @@ public class FallasListaActivity extends AppCompatActivity implements Data, Stat
     private RecyclerView recyclerView;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        new FirebaseHelper().leerFalla(FallasListaActivity.this, Collections.FALLAS.toString());
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fallas_lista);
@@ -39,26 +45,11 @@ public class FallasListaActivity extends AppCompatActivity implements Data, Stat
                 abrirActividad();
             }
         });
-        arrayList();
     }
 
     public void abrirActividad() {
         Intent intent = new Intent(this, FallasFormActivity.class);
         startActivity(intent);
-    }
-
-    public void llenar(ArrayList<Fallas> fallas) {
-        recyclerView.setAdapter(new AdapterItemFallas(fallas, FallasListaActivity.this, FallasListaActivity.this));
-        StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(mLayoutManager);
-    }
-
-    public void arrayList() {
-        arrayList = new ArrayList<Fallas>();
-        arrayList.add(new Fallas(UUID.randomUUID().toString(), "ABC-123", "Tarjeta de red", "Incendio", "Fuego por todos lados"));
-        arrayList.add(new Fallas(UUID.randomUUID().toString(), "DEF-456", "Módem", "Choque eléctrico", "A causa de tormenta se dañaron los cables"));
-        arrayList.add(new Fallas(UUID.randomUUID().toString(), "GHI-789", "Switch", "Mala configuración", "No se agregaron bien la IPs"));
-        llenar(arrayList);
     }
 
     @Override
@@ -69,6 +60,12 @@ public class FallasListaActivity extends AppCompatActivity implements Data, Stat
             arrayList.add(fallas);
         }
         llenar(arrayList);
+    }
+
+    public void llenar(ArrayList<Fallas> fallas) {
+        recyclerView.setAdapter(new AdapterItemFallas(fallas, FallasListaActivity.this, FallasListaActivity.this));
+        StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mLayoutManager);
     }
 
     @Override

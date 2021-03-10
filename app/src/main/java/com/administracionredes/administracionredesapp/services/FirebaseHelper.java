@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.helpers.Status;
+import com.administracionredes.administracionredesapp.models.Fallas;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -12,13 +13,13 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FirebaseHelper
-{
+public class FirebaseHelper {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public void add(Status status, String collection, String keys[], String datas[]) {
@@ -64,8 +65,7 @@ public class FirebaseHelper
     }
 
 
-    public void eliminar(Status status,String collection, String id)
-    {
+    public void eliminar(Status status, String collection, String id) {
         db.collection(collection).document(id)
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -81,6 +81,7 @@ public class FirebaseHelper
                     }
                 });
     }
+
     public void leerFalla(Data data, String collection) {
         db.collection(collection)
                 .get()
@@ -88,15 +89,19 @@ public class FirebaseHelper
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList datos = new ArrayList();
+                            ArrayList<Object> datos = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                //objeto
+                                //{"GUIA","DISPOSITIVO", "TIPO","OBSERVACION"}
+                                Fallas fallas = new Fallas(document.getId(), document.getData().get("GUIA").toString(), document.getData().get("DISPOSITIVO").toString(), document.getData().get("TIPO").toString(), document.getData().get("OBSERVACION").toString());
+                                datos.add(fallas);
                             }
+                            data.arrayList(datos);
                         } else {
                         }
                     }
                 });
     }
+
     public void leerInventario(Data data, String collection) {
         db.collection(collection)
                 .get()
