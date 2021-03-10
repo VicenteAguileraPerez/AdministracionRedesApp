@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.administracionredes.administracionredesapp.adapters.AdapterItemFallas;
+import com.administracionredes.administracionredesapp.models.Fallas;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

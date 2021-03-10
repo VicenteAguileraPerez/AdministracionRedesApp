@@ -1,4 +1,4 @@
-package com.administracionredes.administracionredesapp;
+package com.administracionredes.administracionredesapp.adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,16 +13,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.administracionredes.administracionredesapp.models.Localizacion;
+import com.administracionredes.administracionredesapp.LocalizacionFormActivity;
+
 import java.util.List;
 
-public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.ViewHolderFallas> {
-    Fallas fallas;
+public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLocalizacion.ViewHolderFallas> {
+    Localizacion localizacion;
     private long mLastClickTime = 0;
-    List<Fallas> fallasList;
+    List<Localizacion> localizacionList;
     Context context;
 
-    public AdapterItemFallas(List<Fallas> fallasList, Context context) {
-        this.fallasList = fallasList;
+    public AdapterItemLocalizacion(List<Localizacion> localizacionList, Context context) {
+        this.localizacionList = localizacionList;
         this.context = context;
     }
 
@@ -36,9 +39,9 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolderFallas holder, int position) {
         final int[] clic = {0};
-        fallas = fallasList.get(position);
-        String guia = fallas.getGuia();
-        holder.textView_nombre.setText(guia);
+        localizacion = localizacionList.get(position);
+        String nombre = localizacion.getNombre();
+        holder.textView_nombre.setText(nombre);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,8 +52,8 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
                 mLastClickTime = SystemClock.elapsedRealtime();
                 ++clic[0];
                 if (clic[0] == 1) {
-                    Intent intent = new Intent(context, FallasFormActivity.class);
-                    intent.putExtra("Fallas", fallas);
+                    Intent intent = new Intent(context, LocalizacionFormActivity.class);
+                    intent.putExtra("Localizacion", localizacion);
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }
@@ -66,9 +69,9 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
                         // The dialog is automatically dismissed when a dialog button is clicked.
                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                Fallas p = fallasList.remove(holder.getAdapterPosition());// if you want to remove item you should do this: first remove item:
+                                Localizacion p = localizacionList.remove(holder.getAdapterPosition());// if you want to remove item you should do this: first remove item:
                                 notifyItemRemoved(holder.getAdapterPosition());//Then  next step you must notify your recycler adapter that you remove an item
-                                notifyItemRangeChanged(holder.getAdapterPosition(), fallasList.size());
+                                notifyItemRangeChanged(holder.getAdapterPosition(), localizacionList.size());
                                 notifyDataSetChanged();
                                 //product.deleteProduct(p.getId());
                             }
@@ -84,7 +87,7 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
 
     @Override
     public int getItemCount() {
-        return fallasList.size();
+        return localizacionList.size();
     }
 
     public static class ViewHolderFallas extends RecyclerView.ViewHolder {
