@@ -28,6 +28,11 @@ public class LocalizacionListaActivity extends AppCompatActivity implements Data
     private RecyclerView recyclerView;
 
     @Override
+    protected void onResume(){
+        super.onResume();
+        new FirebaseHelper().leerLocalizacion(LocalizacionListaActivity.this,Collections.LOCALIZACION.toString());
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
@@ -39,7 +44,7 @@ public class LocalizacionListaActivity extends AppCompatActivity implements Data
                 abrirActividad();
             }
         });
-        arrayList();
+
     }
 
     public void abrirActividad() {
@@ -47,19 +52,16 @@ public class LocalizacionListaActivity extends AppCompatActivity implements Data
         startActivity(intent);
     }
 
-    public void llenar(ArrayList<Localizacion> localizaciones) {
-        recyclerView.setAdapter(new AdapterItemLocalizacion(localizaciones, LocalizacionListaActivity.this,LocalizacionListaActivity.this));
-        StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(mLayoutManager);
-    }
 
-    public void arrayList() {
+
+    /*public void arrayList() {
         arrayList = new ArrayList<Localizacion>();
         arrayList.add(new Localizacion(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves","hola"));
         arrayList.add(new Localizacion(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves","hola"));
         arrayList.add(new Localizacion(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves","hola"));
         llenar(arrayList);
-    }
+    }*/
+
 
     @Override
     public void arrayList(ArrayList<Object> data) {
@@ -69,6 +71,12 @@ public class LocalizacionListaActivity extends AppCompatActivity implements Data
             arrayList.add(loc);
         }
         llenar(arrayList);
+    }
+
+    public void llenar(ArrayList<Localizacion> localizaciones) {
+        recyclerView.setAdapter(new AdapterItemLocalizacion(localizaciones, LocalizacionListaActivity.this,LocalizacionListaActivity.this));
+        StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mLayoutManager);
     }
 
     @Override

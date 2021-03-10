@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.helpers.Status;
+import com.administracionredes.administracionredesapp.models.Localizacion;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -12,6 +13,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.w3c.dom.Document;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -138,10 +142,17 @@ public class FirebaseHelper
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList datos = new ArrayList();
+                            ArrayList<Object> datos = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                //objeto
+                                //objeto {"NOMBRE","TIPO", "LOCALIZACION","STATUS","OBSERVACIONES"}
+                                Localizacion localizacion = new Localizacion(document.getId(),document.getData().get("NOMBRE").toString(),
+                                        document.getData().get("TIPO").toString(),document.getData().get("LOCALIZACION").toString(), document.getData().get("STATUS").toString(),
+                                        document.getData().get("OBSERVACIONES").toString());
+                                datos.add(localizacion);
+
+
                             }
+                            data.arrayList(datos);
                         } else {
                         }
                     }
