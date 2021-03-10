@@ -96,6 +96,16 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
     @Override
     public void status(String mensaje) {
         Toast.makeText(InventarioFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+        if (mensaje.contains("exitosa")) {
+            clean();
+        }
+    }
+
+    public void clean() {
+        textInputLayout_nombre_dispositivo.getEditText().setText("");
+        textInputLayout_observaciones.getEditText().setText("");
+        textInputLayout_status.getEditText().setText("");
+        textInputLayout_tipo.getEditText().setText("");
     }
 }
 

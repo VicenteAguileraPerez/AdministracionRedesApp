@@ -9,15 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.administracionredes.administracionredesapp.ConfiguracionesFormActivity;
 import com.administracionredes.administracionredesapp.R;
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.models.Configuraciones;
+
 import java.util.List;
 
-public class AdapterItemConfiguraciones extends RecyclerView.Adapter<AdapterItemConfiguraciones.ViewHolderConfiguraciones>
-{
+public class AdapterItemConfiguraciones extends RecyclerView.Adapter<AdapterItemConfiguraciones.ViewHolderConfiguraciones> {
     Configuraciones configuraciones;
     private long mLastClickTime = 0;
     List<Configuraciones> configuracionesList;
@@ -50,10 +53,9 @@ public class AdapterItemConfiguraciones extends RecyclerView.Adapter<AdapterItem
                     return;
                 }
                 mLastClickTime = SystemClock.elapsedRealtime();
-                mLastClickTime = SystemClock.elapsedRealtime();
                 ++clic[0];
                 if (clic[0] == 1) {
-                    Intent intent = new Intent(context, null);
+                    Intent intent = new Intent(context, ConfiguracionesFormActivity.class);
                     intent.putExtra("Configuraciones", configuraciones);
                     intent.putExtra("dato", true);
                     context.startActivity(intent);

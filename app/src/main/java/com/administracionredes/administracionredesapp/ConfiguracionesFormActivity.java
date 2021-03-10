@@ -1,9 +1,11 @@
 package com.administracionredes.administracionredesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;
@@ -79,7 +81,7 @@ public class ConfiguracionesFormActivity extends AppCompatActivity implements St
 
     public void getDatos() {
         if (getIntent().getBooleanExtra("dato", false)) {
-            configuraciones = (Configuraciones) getIntent().getSerializableExtra("Localizacion");
+            configuraciones = (Configuraciones) getIntent().getSerializableExtra("Configuraciones");
             textInputLayout_lugar.getEditText().setText(configuraciones.getLugar());
             textInputLayout_nodos.getEditText().setText(configuraciones.getNodos());
             textInputLayout_switches.getEditText().setText(configuraciones.getSwitches());
@@ -92,8 +94,23 @@ public class ConfiguracionesFormActivity extends AppCompatActivity implements St
         }
     }
 
+
     @Override
     public void status(String mensaje) {
         Toast.makeText(ConfiguracionesFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+        if (mensaje.contains("exitosa")) {
+            clean();
+        }
+    }
+
+    public void clean() {
+        textInputLayout_lugar.getEditText().setText("");
+        textInputLayout_nodos.getEditText().setText("");
+        textInputLayout_switches.getEditText().setText("");
+        textInputLayout_topologia.getEditText().setText("");
+        textInputLayout_dirred.getEditText().setText("");
+        textInputLayout_cdir.getEditText().setText("");
+        textInputLayout_host.getEditText().setText("");
+        textInputLayout_observaciones.getEditText().setText("");
     }
 }

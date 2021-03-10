@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -52,6 +53,7 @@ public class ConfiguracionesListaActivity extends AppCompatActivity implements D
     @Override
     public void arrayList(ArrayList<Object> data) {
         arrayList = new ArrayList<>();
+
         for (Object o : data) {
             Configuraciones config = (Configuraciones) o;
             arrayList.add(config);
@@ -67,7 +69,7 @@ public class ConfiguracionesListaActivity extends AppCompatActivity implements D
 
     @Override
     public void id(String id) {
-        new FirebaseHelper().eliminar(ConfiguracionesListaActivity.this::status, Collections.FALLAS.toString(), id);
+        new FirebaseHelper().eliminar(ConfiguracionesListaActivity.this::status, Collections.CONFIGURACION.toString(), id);
     }
 
     @Override
