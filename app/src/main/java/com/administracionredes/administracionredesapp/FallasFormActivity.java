@@ -4,17 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
+import com.administracionredes.administracionredesapp.helpers.Status;
+import com.administracionredes.administracionredesapp.models.Fallas;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class FallasFormActivity extends AppCompatActivity {
+public class FallasFormActivity extends AppCompatActivity implements Status {
     private TextInputLayout textInputLayout_guia;
     private TextInputLayout textInputLayout_dispositivo;
     private TextInputLayout textInputLayout__tipo_de_falla;
     private TextInputLayout textInputLayout_observaciones;
     private MaterialButton materialButton_agregar;
+    Fallas fallas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,5 +58,15 @@ public class FallasFormActivity extends AppCompatActivity {
             textInputLayout.setError("Campo vacío");
             return false;
         }
+    }
+
+    public void getDatos() {
+        if (getIntent().getBooleanExtra("Fallas", false)) {
+        }
+    }
+
+    @Override
+    public void status(String mensaje) {
+
     }
 }

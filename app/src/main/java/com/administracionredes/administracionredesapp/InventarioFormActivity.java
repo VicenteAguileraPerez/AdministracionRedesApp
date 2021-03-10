@@ -16,7 +16,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class InventarioFormActivity extends AppCompatActivity implements Status {
-
     private TextInputLayout textInputLayout_nombre_dispositivo;
     private TextInputLayout textInputLayout_observaciones;
     private TextInputLayout textInputLayout_tipo;
@@ -29,7 +28,6 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventario_form);
         setTitle("Inventario");
-
         textInputLayout_nombre_dispositivo = findViewById(R.id.textInputLayout_nombre_dispositivo);
         textInputLayout_observaciones = findViewById(R.id.textInputLayout_observaciones);
         textInputLayout_status = findViewById(R.id.textInputLayout_status);
@@ -43,21 +41,17 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
                 String tipo = textInputLayout_tipo.getEditText().getText().toString();
                 String status = textInputLayout_status.getEditText().getText().toString();
                 String observaciones = textInputLayout_observaciones.getEditText().getText().toString();
-
                 if (evaluarDatos(nombre_dispositivo, textInputLayout_nombre_dispositivo) && evaluarDatos(tipo, textInputLayout_tipo) &&
                         evaluarDatos(status, textInputLayout_status) && evaluarDatos(observaciones, textInputLayout_observaciones)) {
                     //Conexión exitosa
                     String datos[] = {nombre_dispositivo, tipo, status, observaciones};
-                    if(getIntent().getBooleanExtra("dato",false))
-                    {
+                    if (getIntent().getBooleanExtra("dato", false)) {
                         //edicion e firebase
-                        new FirebaseHelper().editar(null, Collections.INVENTARIO.toString(),inventario.getId(), StaticHelper.INVENTARIOKEYS,datos);
-                    }
-                    else{
+                        new FirebaseHelper().editar(InventarioFormActivity.this::status, Collections.INVENTARIO.toString(), inventario.getId(), StaticHelper.INVENTARIOKEYS, datos);
+                    } else {
                         //agregacion en firebase
-                        new FirebaseHelper().add(null, Collections.INVENTARIO.toString(),StaticHelper.INVENTARIOKEYS,datos);
+                        new FirebaseHelper().add(InventarioFormActivity.this::status, Collections.INVENTARIO.toString(), StaticHelper.INVENTARIOKEYS, datos);
                     }
-
                     Snackbar.make(view, "Datos válidos", Snackbar.LENGTH_SHORT).show();
                 } else {
                     //Conexión
@@ -65,7 +59,6 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
                 }
             }
         });
-
     }
 
     public boolean evaluarDatos(String valor, TextInputLayout textInputLayout) {
@@ -76,10 +69,9 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
             return false;
         }
     }
-    public void getDatos()
-    {
-        if(getIntent().getBooleanExtra("dato",false))
-        {
+
+    public void getDatos() {
+        if (getIntent().getBooleanExtra("dato", false)) {
             inventario = (Inventario) getIntent().getSerializableExtra("Inventario");
             textInputLayout_nombre_dispositivo.getEditText().setText(inventario.getNombre_dispositivo());
             textInputLayout_observaciones.getEditText().setText(inventario.getObservaciones());
@@ -91,7 +83,6 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
 
     @Override
     public void status(String mensaje) {
-        Toast.makeText(InventarioFormActivity.this,mensaje,Toast.LENGTH_SHORT).show();
+        Toast.makeText(InventarioFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
     }
 }
-
