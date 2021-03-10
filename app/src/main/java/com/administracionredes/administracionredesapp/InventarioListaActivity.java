@@ -17,12 +17,15 @@ import com.administracionredes.administracionredesapp.helpers.Status;
 import com.administracionredes.administracionredesapp.models.Fallas;
 import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.services.FirebaseHelper;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
+
 public class InventarioListaActivity extends AppCompatActivity implements Data, Status {
+
     private FloatingActionButton floatingActionButton;
     private ArrayList<Inventario> arrayList;
     private RecyclerView recyclerView;
@@ -33,6 +36,7 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
         super.onResume();
         new FirebaseHelper().leerInventario(InventarioListaActivity.this, Collections.INVENTARIO.toString());
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,7 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
 
 
 
+
     @Override
     public void arrayList(ArrayList<Object> data) {
         arrayList = new ArrayList<>();
@@ -66,11 +71,14 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
         llenar(arrayList);
     }
 
+
     public void llenar(ArrayList<Inventario> Inventario) {
         recyclerView.setAdapter(new AdapterItemInventario(Inventario, InventarioListaActivity.this));
         StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);
     }
+
+
 
     @Override
     public void id(String id) {
@@ -82,12 +90,5 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
         Toast.makeText(InventarioListaActivity.this, mensaje, Toast.LENGTH_SHORT).show();
     }
 
-   /* public void arrayList() {
-        arrayList = new ArrayList<Inventario>();
-        arrayList.add(new Inventario(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves"));
-        arrayList.add(new Inventario(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves"));
-        arrayList.add(new Inventario(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves"));
-        llenar(arrayList);
-    }*/
 
 }

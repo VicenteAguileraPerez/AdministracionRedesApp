@@ -11,29 +11,37 @@ import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;
 import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.services.FirebaseHelper;
+
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
+
 public class InventarioFormActivity extends AppCompatActivity implements Status {
+
     private TextInputLayout textInputLayout_nombre_dispositivo;
     private TextInputLayout textInputLayout_observaciones;
     private TextInputLayout textInputLayout_tipo;
     private TextInputLayout textInputLayout_status;
     private MaterialButton materialButton_agregar;
+
     Inventario inventario;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventario_form);
+
         setTitle("Inventario");
+
         textInputLayout_nombre_dispositivo = findViewById(R.id.textInputLayout_nombre_dispositivo);
         textInputLayout_observaciones = findViewById(R.id.textInputLayout_observaciones);
         textInputLayout_status = findViewById(R.id.textInputLayout_status);
         textInputLayout_tipo = findViewById(R.id.textInputLayout_tipo);
         materialButton_agregar = findViewById(R.id.button_agregar);
-        getDatos();
+
+
         materialButton_agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,10 +49,12 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
                 String tipo = textInputLayout_tipo.getEditText().getText().toString();
                 String status = textInputLayout_status.getEditText().getText().toString();
                 String observaciones = textInputLayout_observaciones.getEditText().getText().toString();
+
                 if (evaluarDatos(nombre_dispositivo, textInputLayout_nombre_dispositivo) && evaluarDatos(tipo, textInputLayout_tipo) &&
                         evaluarDatos(status, textInputLayout_status) && evaluarDatos(observaciones, textInputLayout_observaciones)) {
                     //Conexión exitosa
                     String datos[] = {nombre_dispositivo, tipo, status, observaciones};
+
                     if (getIntent().getBooleanExtra("dato", false)) {
                         //edicion e firebase
                         new FirebaseHelper().editar(InventarioFormActivity.this::status, Collections.INVENTARIO.toString(), inventario.getId(), StaticHelper.INVENTARIOKEYS, datos);
@@ -52,6 +62,7 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
                         //agregacion en firebase
                         new FirebaseHelper().add(InventarioFormActivity.this::status, Collections.INVENTARIO.toString(), StaticHelper.INVENTARIOKEYS, datos);
                     }
+
                     Snackbar.make(view, "Datos válidos", Snackbar.LENGTH_SHORT).show();
                 } else {
                     //Conexión
@@ -59,6 +70,7 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
                 }
             }
         });
+
     }
 
     public boolean evaluarDatos(String valor, TextInputLayout textInputLayout) {
@@ -69,6 +81,7 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
             return false;
         }
     }
+
 
     public void getDatos() {
         if (getIntent().getBooleanExtra("dato", false)) {
@@ -86,3 +99,4 @@ public class InventarioFormActivity extends AppCompatActivity implements Status 
         Toast.makeText(InventarioFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
     }
 }
+

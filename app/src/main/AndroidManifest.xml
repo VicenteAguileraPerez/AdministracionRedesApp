@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdministracionRedesApp">
         <activity android:name=".FallasFormActivity"></activity>
-        <activity android:name=".FallasListaActivity" />
-        <activity android:name=".LocalizacionFormActivity" />
-        <activity android:name=".LocalizacionListaActivity" />
+        <activity android:name=".FallasListaActivity"/>
+        <activity android:name=".LocalizacionFormActivity"/>
+        <activity android:name=".LocalizacionListaActivity"/>
+        <activity android:name=".InventarioFormActivity"></activity>
+        <activity android:name=".InventarioListaActivity">
+        <activity android:name=".ListaConfiguracionesActivity"></activity>
+        <activity android:name=".ConfiguracionesFormActivity"></activity>
         <activity
             android:name=".InventarioFormActivity"
             android:parentActivityName=".InventarioListaActivity" />
