@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdministracionRedesApp">
+        <activity android:name=".ListaConfiguracionesActivity"></activity>
         <activity android:name=".ConfiguracionesFormActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
