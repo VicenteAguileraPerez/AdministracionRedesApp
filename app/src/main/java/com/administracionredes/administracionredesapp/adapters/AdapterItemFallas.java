@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.administracionredes.administracionredesapp.R;
+import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.models.Fallas;
 import com.administracionredes.administracionredesapp.FallasFormActivity;
 
@@ -24,10 +25,12 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
     private long mLastClickTime = 0;
     List<Fallas> fallasList;
     Context context;
+    Data data;
 
-    public AdapterItemFallas(List<Fallas> fallasList, Context context) {
+    public AdapterItemFallas(List<Fallas> fallasList, Context context, Data data) {
         this.fallasList = fallasList;
         this.context = context;
+        this.data = data;
     }
 
     @NonNull
@@ -74,7 +77,7 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
                                 notifyItemRemoved(holder.getAdapterPosition());//Then  next step you must notify your recycler adapter that you remove an item
                                 notifyItemRangeChanged(holder.getAdapterPosition(), fallasList.size());
                                 notifyDataSetChanged();
-                                //product.deleteProduct(p.getId());
+                                data.id(p.getId());
                             }
                         })
                         // A null listener allows the button to dismiss the dialog and take no further action.
