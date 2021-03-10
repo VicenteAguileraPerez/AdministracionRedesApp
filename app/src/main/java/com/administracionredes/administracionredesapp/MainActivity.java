@@ -11,7 +11,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity
 {
-
     private TextInputLayout textInputLayout_nombre;
     private TextInputLayout textInputLayout_observaciones;
     private MaterialButton materialButton_agregar;
