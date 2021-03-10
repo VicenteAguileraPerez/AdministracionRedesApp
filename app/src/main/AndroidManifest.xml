@@ -16,13 +16,15 @@
         <activity android:name=".InventarioFormActivity"></activity>
         <activity android:name=".InventarioListaActivity">
         <activity android:name=".ListaConfiguracionesActivity"></activity>
-        <activity android:name=".ConfiguracionesFormActivity">
+        <activity android:name=".ConfiguracionesFormActivity"></activity>
+        <activity
+            android:name=".InventarioFormActivity"
+            android:parentActivityName=".InventarioListaActivity" />
+        <activity android:name=".InventarioListaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

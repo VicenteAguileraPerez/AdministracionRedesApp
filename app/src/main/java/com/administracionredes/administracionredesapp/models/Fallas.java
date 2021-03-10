@@ -1,4 +1,4 @@
-package com.administracionredes.administracionredesapp;
+package com.administracionredes.administracionredesapp.models;
 
 import java.io.Serializable;
 

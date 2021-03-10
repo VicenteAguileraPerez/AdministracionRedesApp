@@ -1,4 +1,4 @@
-package com.administracionredes.administracionredesapp;
+package com.administracionredes.administracionredesapp.adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,32 +13,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.administracionredes.administracionredesapp.R;
+import com.administracionredes.administracionredesapp.helpers.Data;
+import com.administracionredes.administracionredesapp.models.Inventario;
+import com.administracionredes.administracionredesapp.InventarioFormActivity;
+
 import java.util.List;
 
-public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLocalizacion.ViewHolderFallas> {
-    Localizacion localizacion;
+public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInventario.ViewHolderInventario> {
+    Inventario inventario;
     private long mLastClickTime = 0;
-    List<Localizacion> localizacionList;
+    List<Inventario> marioList;
     Context context;
-
-    public AdapterItemLocalizacion(List<Localizacion> localizacionList, Context context) {
-        this.localizacionList = localizacionList;
+    Data data;
+    public AdapterItemInventario(List<Inventario> marioList, Context context,Data data) {
+        this.marioList = marioList;
+        this.data=data;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ViewHolderFallas onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(null, parent, false);
-        return new ViewHolderFallas(view);
+    public ViewHolderInventario onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
+        return new ViewHolderInventario(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderFallas holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderInventario holder, int position) {
         final int[] clic = {0};
-        localizacion = localizacionList.get(position);
-        String nombre = localizacion.getNombre();
-        holder.textView_nombre.setText(nombre);
+        inventario = marioList.get(position);
+        String nombre_dispositivo = inventario.getNombre_dispositivo();
+        holder.textView_nombre.setText(nombre_dispositivo);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,8 +55,8 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
                 mLastClickTime = SystemClock.elapsedRealtime();
                 ++clic[0];
                 if (clic[0] == 1) {
-                    Intent intent = new Intent(context, LocalizacionFormActivity.class);
-                    intent.putExtra("Localizacion", localizacion);
+                    Intent intent = new Intent(context, InventarioFormActivity.class);
+                    intent.putExtra("Inventario", inventario);
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }
@@ -66,11 +72,11 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
                         // The dialog is automatically dismissed when a dialog button is clicked.
                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                Localizacion p = localizacionList.remove(holder.getAdapterPosition());// if you want to remove item you should do this: first remove item:
+                                Inventario p = marioList.remove(holder.getAdapterPosition());// if you want to remove item you should do this: first remove item:
                                 notifyItemRemoved(holder.getAdapterPosition());//Then  next step you must notify your recycler adapter that you remove an item
-                                notifyItemRangeChanged(holder.getAdapterPosition(), localizacionList.size());
+                                notifyItemRangeChanged(holder.getAdapterPosition(), marioList.size());
                                 notifyDataSetChanged();
-                                //product.deleteProduct(p.getId());
+                               data.id(p.getId());
                             }
                         })
                         // A null listener allows the button to dismiss the dialog and take no further action.
@@ -84,15 +90,15 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
 
     @Override
     public int getItemCount() {
-        return localizacionList.size();
+        return marioList.size();
     }
 
-    public static class ViewHolderFallas extends RecyclerView.ViewHolder {
+    public static class ViewHolderInventario extends RecyclerView.ViewHolder {
         TextView textView_nombre;
 
-        public ViewHolderFallas(View viewItem) {
+        public ViewHolderInventario(View viewItem) {
             super(viewItem);
-            //textView_nombre = viewItem.findViewById(R.id.textView_nombre);
+            textView_nombre = viewItem.findViewById(R.id.textView_nombre);
         }
     }
 }
