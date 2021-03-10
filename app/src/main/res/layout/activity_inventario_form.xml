@@ -125,26 +125,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-
                 android:backgroundTint="@color/azul"
                 android:text="Guardar device" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_mas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="20dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@android:drawable/ic_input_add"
-                app:tint="@color/white"
-                app:backgroundTint="@color/azul" />
-
-                android:backgroundTint="@color/azul"
-                android:text="Guardar device" />
-
-
         </LinearLayout>
 
     </ScrollView>

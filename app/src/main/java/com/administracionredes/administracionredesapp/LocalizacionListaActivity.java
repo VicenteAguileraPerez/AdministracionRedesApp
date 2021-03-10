@@ -53,16 +53,6 @@ public class LocalizacionListaActivity extends AppCompatActivity implements Data
     }
 
 
-
-    /*public void arrayList() {
-        arrayList = new ArrayList<Localizacion>();
-        arrayList.add(new Localizacion(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves","hola"));
-        arrayList.add(new Localizacion(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves","hola"));
-        arrayList.add(new Localizacion(UUID.randomUUID().toString(), "1234AB", "Modem", "Se quemo", "ps esta quemao no ves","hola"));
-        llenar(arrayList);
-    }*/
-
-
     @Override
     public void arrayList(ArrayList<Object> data) {
         arrayList = new ArrayList<>();

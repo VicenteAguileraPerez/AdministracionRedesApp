@@ -1,17 +1,14 @@
 package com.administracionredes.administracionredesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;
 import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.services.FirebaseHelper;
-
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;

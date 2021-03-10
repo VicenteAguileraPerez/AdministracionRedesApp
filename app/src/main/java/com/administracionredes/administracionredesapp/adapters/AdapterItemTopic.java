@@ -11,7 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.administracionredes.administracionredesapp.ConfiguracionesListaActivity;
+import com.administracionredes.administracionredesapp.FallasListaActivity;
+import com.administracionredes.administracionredesapp.InventarioListaActivity;
+import com.administracionredes.administracionredesapp.LocalizacionListaActivity;
 import com.administracionredes.administracionredesapp.R;
+import com.administracionredes.administracionredesapp.helpers.Collections;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,42 +64,28 @@ public class AdapterItemTopic extends RecyclerView.Adapter<AdapterItemTopic.View
                 if(clic[0] ==1)
                 {
                     Intent intent;
-                   // Intent intent = new Intent(context, class);
-                    //intent.putExtra("producto", productos);
-                    //intent.putExtra("dato", true);
-                    //context.startActivity(intent);
+                    if(title.equals(Collections.CONFIGURACION.toString()))
+                    {
+                         intent = new Intent(context, ConfiguracionesListaActivity.class);
+                    }
+                    else if(title.equals(Collections.FALLAS.toString()))
+                    {
+                        intent = new Intent(context, FallasListaActivity.class);
+                    }
+                    else if(title.equals(Collections.LOCALIZACION.toString()))
+                    {
+                        intent = new Intent(context, LocalizacionListaActivity.class);
+                    }
+                    else
+                    {
+                        intent = new Intent(context, InventarioListaActivity.class);
+                    }
+
+                    context.startActivity(intent);
                 }
             }
         });
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
 
-                new AlertDialog.Builder(context)
-                        .setTitle("Eliminar")
-                        .setMessage("¿Tú quieres eliminar este producto?")
-                        // Specifying a listener allows you to take an action before dismissing the dialog.
-                        // The dialog is automatically dismissed when a dialog button is clicked.
-                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                               /*  p = productosList.remove(holder.getAdapterPosition());// if you want to remove item you should do this: first remove item:
-                                notifyItemRemoved(holder.getAdapterPosition());//Then  next step you must notify your recycler adapter that you remove an item
-                                notifyItemRangeChanged(holder.getAdapterPosition(), productosList.size());
-                                notifyDataSetChanged();
-                                product.deleteProduct(p.getId());*/
-
-                            }
-                        })
-
-                        // A null listener allows the button to dismiss the dialog and take no further action.
-                        .setNegativeButton("No", null)
-                        .setIcon(android.R.drawable.ic_delete)
-                        .show();
-
-                return true;
-
-            }
-        });
 
     }
 

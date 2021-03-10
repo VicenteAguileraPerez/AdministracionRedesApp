@@ -141,8 +141,10 @@ public class FirebaseHelper {
                             ArrayList datos = new ArrayList();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 //objeto
+                                //
                             }
                         } else {
+
                         }
                     }
                 });

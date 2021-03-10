@@ -1,11 +1,9 @@
 package com.administracionredes.administracionredesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;

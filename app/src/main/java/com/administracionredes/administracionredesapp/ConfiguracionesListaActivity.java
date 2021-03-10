@@ -3,12 +3,10 @@ package com.administracionredes.administracionredesapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.administracionredes.administracionredesapp.adapters.AdapterItemConfiguraciones;
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.Data;
@@ -19,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class ListaConfiguracionesActivity extends AppCompatActivity implements Data, Status {
+public class ConfiguracionesListaActivity extends AppCompatActivity implements Data, Status {
     private FloatingActionButton floatingActionButton;
     private ArrayList<Configuraciones> arrayList;
     private RecyclerView recyclerView;
@@ -27,7 +25,7 @@ public class ListaConfiguracionesActivity extends AppCompatActivity implements D
     @Override
     protected void onResume() {
         super.onResume();
-        new FirebaseHelper().leerFalla(ListaConfiguracionesActivity.this, Collections.FALLAS.toString());
+        new FirebaseHelper().leerFalla(ConfiguracionesListaActivity.this, Collections.FALLAS.toString());
     }
 
     @Override
@@ -60,18 +58,18 @@ public class ListaConfiguracionesActivity extends AppCompatActivity implements D
     }
 
     public void llenar(ArrayList<Configuraciones> configuraciones) {
-        recyclerView.setAdapter(new AdapterItemConfiguraciones(configuraciones, ListaConfiguracionesActivity.this, ListaConfiguracionesActivity.this));
+        recyclerView.setAdapter(new AdapterItemConfiguraciones(configuraciones, ConfiguracionesListaActivity.this, ConfiguracionesListaActivity.this));
         StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);
     }
 
     @Override
     public void id(String id) {
-        new FirebaseHelper().eliminar(ListaConfiguracionesActivity.this::status, Collections.FALLAS.toString(), id);
+        new FirebaseHelper().eliminar(ConfiguracionesListaActivity.this::status, Collections.FALLAS.toString(), id);
     }
 
     @Override
     public void status(String mensaje) {
-        Toast.makeText(ListaConfiguracionesActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+        Toast.makeText(ConfiguracionesListaActivity.this, mensaje, Toast.LENGTH_SHORT).show();
     }
 }
