@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class ListaActivity extends AppCompatActivity {
+public class LocalizacionListaActivity extends AppCompatActivity {
     private FloatingActionButton floatingActionButton;
     private ArrayList<Localizacion> arrayList;
     private RecyclerView recyclerView;
@@ -39,7 +39,7 @@ public class ListaActivity extends AppCompatActivity {
     }
 
     public void llenar(ArrayList<Localizacion> localizaciones) {
-        recyclerView.setAdapter(new AdapterItemLocalizacion(localizaciones, ListaActivity.this));
+        recyclerView.setAdapter(new AdapterItemLocalizacion(localizaciones, LocalizacionListaActivity.this));
         StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);
     }

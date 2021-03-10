@@ -9,12 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-//sdfsdf
-//jkhnjhk
-//dfsfsdf
-//dgdfgfdgfd
-//fdsf
-//asdsa
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,7 +29,7 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
     @NonNull
     @Override
     public ViewHolderFallas onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_localizacion, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(null, parent, false);
         return new ViewHolderFallas(view);
     }
 
@@ -55,7 +50,7 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
                 ++clic[0];
                 if (clic[0] == 1) {
                     Intent intent = new Intent(context, LocalizacionFormActivity.class);
-                    intent.putExtra("Fallas", localizacion);
+                    intent.putExtra("Localizacion", localizacion);
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }
@@ -97,7 +92,7 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
 
         public ViewHolderFallas(View viewItem) {
             super(viewItem);
-            textView_nombre = viewItem.findViewById(R.id.textView_nombre);
+            //textView_nombre = viewItem.findViewById(R.id.textView_nombre);
         }
     }
 }
