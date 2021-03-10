@@ -31,7 +31,7 @@ public class InventarioListaActivity extends AppCompatActivity implements Data, 
     @Override
     protected void onResume(){
         super.onResume();
-        new FirebaseHelper().leerInventario(null, Collections.INVENTARIO.toString());
+        new FirebaseHelper().leerInventario(InventarioListaActivity.this, Collections.INVENTARIO.toString());
     }
 
     @Override

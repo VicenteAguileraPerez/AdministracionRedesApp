@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.administracionredes.administracionredesapp.R;
+import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.InventarioFormActivity;
 
@@ -24,9 +25,10 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
     private long mLastClickTime = 0;
     List<Inventario> marioList;
     Context context;
-
-    public AdapterItemInventario(List<Inventario> marioList, Context context) {
+    Data data;
+    public AdapterItemInventario(List<Inventario> marioList, Context context,Data data) {
         this.marioList = marioList;
+        this.data=data;
         this.context = context;
     }
 
@@ -74,7 +76,7 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
                                 notifyItemRemoved(holder.getAdapterPosition());//Then  next step you must notify your recycler adapter that you remove an item
                                 notifyItemRangeChanged(holder.getAdapterPosition(), marioList.size());
                                 notifyDataSetChanged();
-                                //product.deleteProduct(p.getId());
+                               data.id(p.getId());
                             }
                         })
                         // A null listener allows the button to dismiss the dialog and take no further action.
