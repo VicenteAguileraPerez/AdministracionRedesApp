@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.administracionredes.administracionredesapp.R;
 import com.administracionredes.administracionredesapp.models.Fallas;
 import com.administracionredes.administracionredesapp.FallasFormActivity;
 
@@ -32,7 +33,7 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
     @NonNull
     @Override
     public ViewHolderFallas onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(null, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
         return new ViewHolderFallas(view);
     }
 
@@ -95,7 +96,7 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
 
         public ViewHolderFallas(View viewItem) {
             super(viewItem);
-            //textView_nombre = viewItem.findViewById(R.id.textView_nombre);
+            textView_nombre = viewItem.findViewById(R.id.textView_nombre);
         }
     }
 }
