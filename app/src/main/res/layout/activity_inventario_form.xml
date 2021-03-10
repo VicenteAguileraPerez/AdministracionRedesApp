@@ -40,7 +40,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
+                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑ "
                     android:enabled="true"
                     android:inputType="textCapSentences"
                     android:maxLength="50" />
@@ -128,17 +128,6 @@
                 android:backgroundTint="@color/azul"
                 android:text="Guardar device" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_mas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="20dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@android:drawable/ic_input_add"
-                app:backgroundTint="@color/azul"
-                app:tint="@color/white" />
 
         </LinearLayout>
 

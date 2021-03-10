@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.helpers.Status;
 import com.administracionredes.administracionredesapp.models.Fallas;
+import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.models.Localizacion;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -112,10 +113,18 @@ public class FirebaseHelper {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList datos = new ArrayList();
+                            ArrayList<Object> datos = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 //objeto
+                                //{"NOMBRE","TIPO", "STATUS","OBSERVACIONES"};
+
+                                Inventario inventario = new Inventario(document.getId(),document.getData().get("NOMBRE").toString(),
+                                        document.getData().get("TIPO").toString(), document.getData().get("STATUS").toString(),
+                                        document.getData().get("OBSERVACIONES").toString());
+                                datos.add(inventario);
+
                             }
+                            data.arrayList(datos);
                         } else {
                         }
                     }
