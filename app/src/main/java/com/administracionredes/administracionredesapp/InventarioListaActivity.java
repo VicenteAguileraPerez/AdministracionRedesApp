@@ -21,7 +21,7 @@ public class InventarioListaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_InventarioLista);
+        setContentView(R.layout.activity_inventario_lista);
         recyclerView = findViewById(R.id.lista_inventario);
         floatingActionButton = findViewById(R.id.fab_mas);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {

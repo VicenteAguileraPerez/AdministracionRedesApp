@@ -29,10 +29,9 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
     @NonNull
     @Override
     public ViewHolderInventario onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_inventario, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(null, parent, false);
         return new ViewHolderInventario(view);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderInventario holder, int position) {
@@ -93,7 +92,7 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
 
         public ViewHolderInventario(View viewItem) {
             super(viewItem);
-            textView_nombre = viewItem.findViewById(R.id.textView_nombre);
+            //textView_nombre = viewItem.findViewById(R.id.textView_nombre);
         }
     }
 }
