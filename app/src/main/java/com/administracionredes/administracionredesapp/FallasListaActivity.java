@@ -53,4 +53,5 @@ public class FallasListaActivity extends AppCompatActivity {
         arrayList.add(new Fallas(UUID.randomUUID().toString(), "GHI-789", "Switch", "Mala configuración", "No se agregaron bien la IPs"));
         llenar(arrayList);
     }
+
 }

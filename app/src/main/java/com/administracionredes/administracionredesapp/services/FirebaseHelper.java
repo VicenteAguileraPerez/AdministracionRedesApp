@@ -12,13 +12,13 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FirebaseHelper {
+public class FirebaseHelper
+{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public void add(Status status, String collection, String keys[], String datas[]) {
@@ -63,6 +63,24 @@ public class FirebaseHelper {
                 });
     }
 
+
+    public void eliminar(Status status,String collection, String id)
+    {
+        db.collection(collection).document(id)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        status.status("Eliminación exitosa");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        status.status("Error al hacer la eliminación");
+                    }
+                });
+    }
     public void leerFalla(Data data, String collection) {
         db.collection(collection)
                 .get()
@@ -79,7 +97,6 @@ public class FirebaseHelper {
                     }
                 });
     }
-
     public void leerInventario(Data data, String collection) {
         db.collection(collection)
                 .get()
