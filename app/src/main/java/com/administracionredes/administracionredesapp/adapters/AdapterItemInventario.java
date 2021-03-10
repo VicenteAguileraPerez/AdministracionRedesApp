@@ -20,7 +20,7 @@ import com.administracionredes.administracionredesapp.InventarioFormActivity;
 import java.util.List;
 
 public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInventario.ViewHolderInventario> {
-    Inventario mario;
+    Inventario inventario;
     private long mLastClickTime = 0;
     List<Inventario> marioList;
     Context context;
@@ -40,8 +40,8 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
     @Override
     public void onBindViewHolder(@NonNull ViewHolderInventario holder, int position) {
         final int[] clic = {0};
-        mario = marioList.get(position);
-        String nombre_dispositivo = mario.getNombre_dispositivo();
+        inventario = marioList.get(position);
+        String nombre_dispositivo = inventario.getNombre_dispositivo();
         holder.textView_nombre.setText(nombre_dispositivo);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
                 ++clic[0];
                 if (clic[0] == 1) {
                     Intent intent = new Intent(context, InventarioFormActivity.class);
-                    intent.putExtra("Inventario", mario);
+                    intent.putExtra("Inventario", inventario);
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }

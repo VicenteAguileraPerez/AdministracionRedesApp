@@ -35,7 +35,7 @@ public class FirebaseHelper
                     @Override
                     public void onSuccess(DocumentReference documentReference)
                     {
-                       status.status(collection+" agregada");
+                       status.status("Agregación exitosa");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
