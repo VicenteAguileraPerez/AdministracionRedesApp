@@ -33,6 +33,7 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
         return new ViewHolderInventario(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolderInventario holder, int position) {
         final int[] clic = {0};
