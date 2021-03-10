@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLocalizacion.ViewHolderFallas> {
+    //Modificación del AdapterItem
     Localizacion localizacion;
     private long mLastClickTime = 0;
     List<Localizacion> localizacionList;
