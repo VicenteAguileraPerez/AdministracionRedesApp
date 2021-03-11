@@ -9,14 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdministracionRedesApp">
-        <activity android:name=".FallasFormActivity"></activity>
-        <activity android:name=".FallasListaActivity"/>
-        <activity android:name=".LocalizacionFormActivity"/>
-        <activity android:name=".LocalizacionListaActivity"/>
-        <activity android:name=".InventarioFormActivity"></activity>
-        <activity android:name=".InventarioListaActivity">
-        <activity android:name=".ListaConfiguracionesActivity"></activity>
-        <activity android:name=".ConfiguracionesFormActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
