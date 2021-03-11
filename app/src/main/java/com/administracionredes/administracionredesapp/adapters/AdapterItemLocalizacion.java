@@ -30,7 +30,6 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
         this.localizacionList = localizacionList;
         this.context = context;
         this.data = data;
-
     }
 
     @NonNull
