@@ -1,7 +1,6 @@
 package com.administracionredes.administracionredesapp.adapters;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.administracionredes.administracionredesapp.ConfiguracionesListaActivity;

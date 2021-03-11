@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,8 +18,6 @@ import com.administracionredes.administracionredesapp.services.FirebaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.UUID;
 
 public class LocalizacionListaActivity extends AppCompatActivity implements Data, Status {
     private FloatingActionButton floatingActionButton;
@@ -30,7 +27,7 @@ public class LocalizacionListaActivity extends AppCompatActivity implements Data
     @Override
     protected void onResume(){
         super.onResume();
-        new FirebaseHelper().leerLocalizacion(LocalizacionListaActivity.this,Collections.LOCALIZACION.toString());
+        new FirebaseHelper().leerLocalizacion(LocalizacionListaActivity.this, Collections.LOCALIZACION.toString());
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

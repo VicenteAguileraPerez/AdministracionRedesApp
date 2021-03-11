@@ -13,10 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.administracionredes.administracionredesapp.FallasFormActivity;
 import com.administracionredes.administracionredesapp.R;
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.models.Fallas;
-import com.administracionredes.administracionredesapp.FallasFormActivity;
+
 
 import java.util.List;
 

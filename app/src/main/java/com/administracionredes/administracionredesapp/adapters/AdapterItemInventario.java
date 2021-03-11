@@ -13,10 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.administracionredes.administracionredesapp.InventarioFormActivity;
 import com.administracionredes.administracionredesapp.R;
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.models.Inventario;
-import com.administracionredes.administracionredesapp.InventarioFormActivity;
 
 import java.util.List;
 
