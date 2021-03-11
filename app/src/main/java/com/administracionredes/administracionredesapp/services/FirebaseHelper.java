@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.helpers.Status;
+import com.administracionredes.administracionredesapp.models.Configuraciones;
 import com.administracionredes.administracionredesapp.models.Fallas;
 import com.administracionredes.administracionredesapp.models.Inventario;
 import com.administracionredes.administracionredesapp.models.Localizacion;
@@ -117,12 +118,10 @@ public class FirebaseHelper {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 //objeto
                                 //{"NOMBRE","TIPO", "STATUS","OBSERVACIONES"};
-
-                                Inventario inventario = new Inventario(document.getId(),document.getData().get("NOMBRE").toString(),
+                                Inventario inventario = new Inventario(document.getId(), document.getData().get("NOMBRE").toString(),
                                         document.getData().get("TIPO").toString(), document.getData().get("STATUS").toString(),
                                         document.getData().get("OBSERVACIONES").toString());
                                 datos.add(inventario);
-
                             }
                             data.arrayList(datos);
                         } else {
@@ -138,11 +137,17 @@ public class FirebaseHelper {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList datos = new ArrayList();
+                            ArrayList<Object> datos = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                //objeto
+                                Configuraciones configuraciones = new Configuraciones(document.getId(), document.getData().get("LUGAR").toString(),
+                                        document.getData().get("NODOS").toString(), document.getData().get("SWITCHES").toString(),
+                                        document.getData().get("TOPOLOGIA").toString(), document.getData().get("RED").toString(), document.getData().get("CDIR").toString(),
+                                        document.getData().get("RANGO-HOST").toString(), document.getData().get("OBSERVACIONES").toString());
+                                datos.add(configuraciones);
                             }
+                            data.arrayList(datos);
                         } else {
+
                         }
                     }
                 });

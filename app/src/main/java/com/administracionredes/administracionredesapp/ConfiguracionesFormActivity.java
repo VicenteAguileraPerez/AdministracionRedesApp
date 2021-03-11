@@ -6,11 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.administracionredes.administracionredesapp.helpers.Collections;
+import com.administracionredes.administracionredesapp.helpers.StaticHelper;
+import com.administracionredes.administracionredesapp.helpers.Status;
+import com.administracionredes.administracionredesapp.models.Configuraciones;
+import com.administracionredes.administracionredesapp.services.FirebaseHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class ConfiguracionesFormActivity extends AppCompatActivity /*implements Status*/ {
+public class ConfiguracionesFormActivity extends AppCompatActivity implements Status {
     private TextInputLayout textInputLayout_lugar;
     private TextInputLayout textInputLayout_nodos;
     private TextInputLayout textInputLayout_switches;
@@ -20,7 +25,7 @@ public class ConfiguracionesFormActivity extends AppCompatActivity /*implements 
     private TextInputLayout textInputLayout_host;
     private TextInputLayout textInputLayout_observaciones;
     private MaterialButton materialButton_guardar_configuracion;
-    //Configuraciones configuraciones;
+    Configuraciones configuraciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +56,10 @@ public class ConfiguracionesFormActivity extends AppCompatActivity /*implements 
                 if (evaluarDatos(lugarS, textInputLayout_lugar) && evaluarDatos(nodosS, textInputLayout_nodos) && evaluarDatos(switchesS, textInputLayout_switches) && evaluarDatos(topologiaS, textInputLayout_topologia) && evaluarDatos(dirredS, textInputLayout_dirred) && evaluarDatos(cdirS, textInputLayout_cdir) && evaluarDatos(hostS, textInputLayout_host) && evaluarDatos(observacionesS, textInputLayout_observaciones)) {
                     String datos[] = {lugarS, nodosS, switchesS, topologiaS, dirredS, cdirS, hostS, observacionesS};
                     if (getIntent().getBooleanExtra("dato", false)) {
-                        //edicion e firebase
-                        //new FirebaseHelper().editar(ConfiguracionesFormActivity.this::status, Collections.CONFIGURACION.toString(), configuraciones.getId(), StaticHelper.CONFIGURACIONKEYS, datos);
+                        new FirebaseHelper().editar(ConfiguracionesFormActivity.this::status, Collections.CONFIGURACION.toString(), configuraciones.getId(), StaticHelper.CONFIGURACIONKEYS, datos);
                     } else {
                         //agregacion en firebase
-                        //new FirebaseHelper().add(ConfiguracionesFormActivity.this::status, Collections.CONFIGURACION.toString(), StaticHelper.CONFIGURACIONKEYS, datos);
+                        new FirebaseHelper().add(ConfiguracionesFormActivity.this::status, Collections.CONFIGURACION.toString(), StaticHelper.CONFIGURACIONKEYS, datos);
                     }
                     Snackbar.make(view, "Datos válidos", Snackbar.LENGTH_SHORT).show();
                 } else {
@@ -77,21 +81,36 @@ public class ConfiguracionesFormActivity extends AppCompatActivity /*implements 
 
     public void getDatos() {
         if (getIntent().getBooleanExtra("dato", false)) {
-            /*configuraciones = (Configuraciones) getIntent().getSerializableExtra("Localizacion");
+            configuraciones = (Configuraciones) getIntent().getSerializableExtra("Configuraciones");
             textInputLayout_lugar.getEditText().setText(configuraciones.getLugar());
             textInputLayout_nodos.getEditText().setText(configuraciones.getNodos());
             textInputLayout_switches.getEditText().setText(configuraciones.getSwitches());
             textInputLayout_topologia.getEditText().setText(configuraciones.getTopologia());
             textInputLayout_dirred.getEditText().setText(configuraciones.getRed());
-            textInputLayout_cdir.getEditText().setText(configuraciones.getCdir);
-            textInputLayout_host.getEditText().setText(configuraciones.getRango_host);
-            textInputLayout_observaciones.getEditText().setText(configuraciones.getObservaciones);*/
+            textInputLayout_cdir.getEditText().setText(configuraciones.getCdir());
+            textInputLayout_host.getEditText().setText(configuraciones.getRango_host());
+            textInputLayout_observaciones.getEditText().setText(configuraciones.getObservaciones());
             materialButton_guardar_configuracion.setText("Editar Configuración");
         }
     }
 
-    /*@Override
+
+    @Override
     public void status(String mensaje) {
         Toast.makeText(ConfiguracionesFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
-    }*/
+        if (mensaje.contains("exitosa")) {
+            clean();
+        }
+    }
+
+    public void clean() {
+        textInputLayout_lugar.getEditText().setText("");
+        textInputLayout_nodos.getEditText().setText("");
+        textInputLayout_switches.getEditText().setText("");
+        textInputLayout_topologia.getEditText().setText("");
+        textInputLayout_dirred.getEditText().setText("");
+        textInputLayout_cdir.getEditText().setText("");
+        textInputLayout_host.getEditText().setText("");
+        textInputLayout_observaciones.getEditText().setText("");
+    }
 }

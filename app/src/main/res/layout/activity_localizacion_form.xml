@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout_nombre"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -37,7 +36,6 @@
                 android:hint="Nombre de dispositivo"
                 app:counterEnabled="true"
                 app:counterMaxLength="50">
-
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -106,7 +104,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="Status"
+                android:hint="Estado"
                 app:counterEnabled="true"
                 app:counterMaxLength="50"
                 app:errorEnabled="true">
@@ -141,7 +139,7 @@
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz0123456789 "
                     android:enabled="true"
                     android:inputType="textCapSentences|textMultiLine"
-                    android:maxLength="50" />
+                    android:maxLength="150" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton

@@ -3,18 +3,15 @@ package com.administracionredes.administracionredesapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.administracionredes.administracionredesapp.adapters.AdapterItemFallas;
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.Data;
 import com.administracionredes.administracionredesapp.helpers.Status;
 import com.administracionredes.administracionredesapp.models.Fallas;
-import com.administracionredes.administracionredesapp.models.Localizacion;
 import com.administracionredes.administracionredesapp.services.FirebaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

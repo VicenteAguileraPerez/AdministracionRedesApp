@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Inventario implements Serializable {
     private String id, tipo, nombre_dispositivo, observaciones, status;
 
-    public Inventario(String id, String tipo, String nombre_dispositivo, String observaciones, String status) {
+    public Inventario(String id, String nombre_dispositivo, String tipo, String status, String observaciones) {
         this.id = id;
         this.tipo = tipo;
         this.nombre_dispositivo = nombre_dispositivo;
