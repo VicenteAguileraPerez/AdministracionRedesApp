@@ -55,7 +55,7 @@ Por último, una vez ingresados los datos, deberá dar clic al botón "AGREGAR".
 
 Para eliminar localizaciones, es necesario dejar presionado por un momento la localización que desea eliminar, depués, deberá dar clic a "SI" para poder eliminarla, en caso contrario, deberá dar clic a "NO".
 
-![Eliminación de localizaciones](/imagenes/localizacionEliminar.jpg)
+![Eliminación de localizaciones](/imagenes/localizacionEliminar.jpeg)
 
 
 ### Edición de Localizaciones
