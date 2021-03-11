@@ -1,77 +1,84 @@
-# AdministracionRedesApp
-
-Esta es una aplicación desarrollada en la materia de **Administración de Redes**, la cual, fue diseñada para facilitar la gestión de las actividades de un **administrador de redes**.
-
-
-## Menú principal
-
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
-
-![Ícono de la aplicación](/imagenes/2.jpg)
+## Ícono de la aplicación
+![Ícono de la aplicación](/imagenes/icono.jpg)
 
 ## Lista de Fallas
-
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-
-### Agregación de falla
-
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
+Permite mostrar una lista con todas las Fallas realizadas por el administrador de red.
+### Agregación de Falla
+Para agregar una nueva Falla deberá oprimir el Botón de "Fallas", posteriormente, orprimir el botón de "Agregar Falla", el cual se identifica con el ícono "+", por último, deberá ingresar los datos correspondientes de los siguentes campos vacíos:
+- Guía
+- Dispositivo
+- Tipo de falla
+- Observaciones
+Una vez ingresados los datos, deberá oprimir el botón "GUARDAR FALLA".
 ### Eliminación de Falla
-
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
+Al mantener oprimido un Registro / Fallas, de inmediato aparecerá una alerta cuestionando al usuario si desea eliminar la Falla seleccionada, deberá oprimir "SÍ" para poder eliminarla, en caso contrario, oprimir "NO".
 ### Edición de Falla
+Para editar las Fallas, deberá oprimir la Falla que desea editar, después, sólo debe modificar el texto del campo que desea editar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al botón "EDITAR FALLA".
 
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
 
+## Lista de Localizaciones
+Es una lista la cual muestra información al sobre las diferentes localizaciones en las que se encuentran los dispositivos de red, así como características de los mismos.
+
+
+
+### Agregación de Localizaciones
+Para agregar una nueva localización, deberá dar clic al botón "Localización", después, deberá dar clic al símbolo de "+" ubicado en la parte inferior derecha de la pantalla, después, deberá llenar los siguientes campos vacíos:
+- Nombre de dispositivo
+- Tipo
+- Localización
+- Estado
+- Observaciones
+
+Por último, una vez ingresados los datos, deberá dar clic al botón "AGREGAR".
+
+
+### Eliminación de Localizaciones
+
+Para eliminar localizaciones, es necesario dejar presionado por un momento la localización que desea eliminar, depués, deberá dar clic a "SI" para poder eliminarla, en caso contrario, deberá dar clic a "NO".
+
+### Edición de Localizaciones
+
+Para editar las localizaciones, deberá dar clic a la localización que desea editar, después, sólo debe modificar el texto del campo que desea cambiar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al  botón "EDITAR LOCALIZACIÓN".
 
 
 ## Lista de Inventario
 
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
+Es una lista en la cual puedes ver que aparatos están disponibles para el administrador de red, los cuales son:
+-Nombre de dispositivo
+-Tipo
+-Status
+-Observaciones
 
 ### Agregación de Inventario
 
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+En este apartado podrás hacer el llenado para agregar un dispositivo llenando los campos de manera correcta y oprimiendo el botón de guardar para que así se puedan visualizar los resultados.
 
 ### Eliminación de Inventario
 
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+Para la eliminación de algún dispositivo simplemente debe de dejar presionado, a continuación aparecerá una pequeña ventana en la cual se observa un SI y un NO, presione SI para eliminar y NO por si se retracta de su decisión.
 
 ### Edición de Inventario
 
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+Aquí podrá editar su inventario basta con presionar en el dispositivo a edita modifica los campos borrando el texto y añadiendo mas posteriormente de en EDITA INVENTARIO para que su edición este completa.
+
 
 ## Lista de Configuración
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
+Permite mostrar una lista con todas las configuraciones realizadas por el administrador de red.
 ### Agregación de Configuración
+Para agregar una nueva Falla deberá oprimir el Botón de "Configuración", posteriormente, orprimir el botón de "Agregar Configuración", el cual se identifica con el ícono "+", por último, deberá ingresar los datos correspondientes de los siguentes campos vacíos:
+- Lugar
+- Cantidad de nodos
+- Cantidad de switches
+- Topología
+- Red
+- CDIR
+- Host
+- Observaciones
 
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
+Una vez ingresados los datos, deberá oprimir el botón "GUARDAR CONFIGURACIÓN".
 ### Eliminación de Configuración
-
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
+Al mantener oprimido un Registro / Configuración, de inmediato aparecerá una alerta cuestionando al usuario si desea eliminar la Configuración seleccionada, deberá oprimir "SÍ" para poder eliminarla, en caso contrario, oprimir "NO".
 ### Edición de Configuración
+Para editar las Configuraciones, deberá oprimir la configuración que desea editar, después, sólo debe modificar el texto del campo que desea editar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al botón "EDITAR CONFIGURACIÓN".
 
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Lista de Localizaciones
-
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-### Agregación de Localizaciones
-
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-### Eliminación de Localizaciones
-
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-### Edición de Localizaciones
-
-> You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
 
