@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "839450727397",
+    "project_id": "administracion-redes",
+    "storage_bucket": "administracion-redes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839450727397:android:ba30418b5a201c89cc550c",
+        "android_client_info": {
+          "package_name": "com.administracionredes.administracionredesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839450727397-cfsdejr0u52gqlj6srm953jh20vj0fai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.administracionredes.administracionredesapp",
+            "certificate_hash": "febcc84c8840eb6432b92a5b6bcf0e170394c041"
+          }
+        },
+        {
+          "client_id": "839450727397-12smp1ordaumf0rroh720f199c560795.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSrgz0wcVUYFrfHFqosUQul3tBeOFx_jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839450727397-12smp1ordaumf0rroh720f199c560795.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
