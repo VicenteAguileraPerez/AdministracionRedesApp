@@ -7,16 +7,31 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
+import com.administracionredes.administracionredesapp.adapters.AdapterItemFallas;
+import com.administracionredes.administracionredesapp.helpers.Collections;
+import com.administracionredes.administracionredesapp.helpers.Data;
+import com.administracionredes.administracionredesapp.helpers.Status;
+import com.administracionredes.administracionredesapp.models.Fallas;
+import com.administracionredes.administracionredesapp.models.Localizacion;
+import com.administracionredes.administracionredesapp.services.FirebaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.UUID;
 
-public class FallasListaActivity extends AppCompatActivity {
+public class FallasListaActivity extends AppCompatActivity implements Data, Status {
     private FloatingActionButton floatingActionButton;
     private ArrayList<Fallas> arrayList;
     private RecyclerView recyclerView;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new FirebaseHelper().leerFalla(FallasListaActivity.this, Collections.FALLAS.toString());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +45,6 @@ public class FallasListaActivity extends AppCompatActivity {
                 abrirActividad();
             }
         });
-        arrayList();
     }
 
     public void abrirActividad() {
@@ -38,17 +52,29 @@ public class FallasListaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void arrayList(ArrayList<Object> data) {
+        arrayList = new ArrayList<>();
+        for (Object o : data) {
+            Fallas fallas = (Fallas) o;
+            arrayList.add(fallas);
+        }
+        llenar(arrayList);
+    }
+
     public void llenar(ArrayList<Fallas> fallas) {
-        recyclerView.setAdapter(new AdapterItemFallas(fallas, FallasListaActivity.this));
+        recyclerView.setAdapter(new AdapterItemFallas(fallas, FallasListaActivity.this, FallasListaActivity.this));
         StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);
     }
 
-    public void arrayList() {
-        arrayList = new ArrayList<Fallas>();
-        arrayList.add(new Fallas(UUID.randomUUID().toString(), "ABC-123", "Tarjeta de red", "Incendio", "Fuego por todos lados"));
-        arrayList.add(new Fallas(UUID.randomUUID().toString(), "DEF-456", "Módem", "Choque eléctrico", "A causa de tormenta se dañaron los cables"));
-        arrayList.add(new Fallas(UUID.randomUUID().toString(), "GHI-789", "Switch", "Mala configuración", "No se agregaron bien la IPs"));
-        llenar(arrayList);
+    @Override
+    public void id(String id) {
+        new FirebaseHelper().eliminar(FallasListaActivity.this::status, Collections.FALLAS.toString(), id);
+    }
+
+    @Override
+    public void status(String mensaje) {
+        Toast.makeText(FallasListaActivity.this, mensaje, Toast.LENGTH_SHORT).show();
     }
 }
