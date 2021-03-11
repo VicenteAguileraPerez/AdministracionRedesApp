@@ -93,8 +93,7 @@ public class ConfiguracionesFormActivity extends AppCompatActivity implements St
             materialButton_guardar_configuracion.setText("Editar Configuración");
         }
     }
-
-
+    
     @Override
     public void status(String mensaje) {
         Toast.makeText(ConfiguracionesFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();

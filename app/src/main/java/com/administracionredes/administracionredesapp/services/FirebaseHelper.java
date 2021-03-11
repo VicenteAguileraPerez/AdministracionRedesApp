@@ -1,5 +1,7 @@
 package com.administracionredes.administracionredesapp.services;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.administracionredes.administracionredesapp.helpers.Data;
@@ -113,8 +115,6 @@ public class FirebaseHelper {
                         if (task.isSuccessful()) {
                             ArrayList<Object> datos = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                //objeto
-                                //{"NOMBRE","TIPO", "STATUS","OBSERVACIONES"};
                                 Inventario inventario = new Inventario(document.getId(), document.getData().get("NOMBRE").toString(),
                                         document.getData().get("TIPO").toString(), document.getData().get("STATUS").toString(),
                                         document.getData().get("OBSERVACIONES").toString());

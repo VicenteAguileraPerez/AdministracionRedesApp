@@ -56,7 +56,7 @@ public class AdapterItemConfiguraciones extends RecyclerView.Adapter<AdapterItem
                 ++clic[0];
                 if (clic[0] == 1) {
                     Intent intent = new Intent(context, ConfiguracionesFormActivity.class);
-                    intent.putExtra("Configuraciones", configuraciones);
+                    intent.putExtra("Configuraciones", configuracionesList.get(position));
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }

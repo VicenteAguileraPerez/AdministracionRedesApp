@@ -42,18 +42,14 @@ public class FallasFormActivity extends AppCompatActivity implements Status {
                 String tipo_de_falla = textInputLayout__tipo_de_falla.getEditText().getText().toString();
                 String observaciones = textInputLayout_observaciones.getEditText().getText().toString();
                 if (evaluarDatos(guia, textInputLayout_guia) && evaluarDatos(dispositivo, textInputLayout_dispositivo) && evaluarDatos(tipo_de_falla, textInputLayout__tipo_de_falla) && evaluarDatos(observaciones, textInputLayout_observaciones)) {
-                    //Conexión exitosa
                     String datos[] = {guia, dispositivo, tipo_de_falla, observaciones};
                     if (getIntent().getBooleanExtra("dato", false)) {
-                        //Edición e Firebase
                         new FirebaseHelper().editar(FallasFormActivity.this::status, Collections.FALLAS.toString(), fallas.getId(), StaticHelper.FALLASKEYS, datos);
                     } else {
-                        //Agregación en Firebase
                         new FirebaseHelper().add(FallasFormActivity.this::status, Collections.FALLAS.toString(), StaticHelper.FALLASKEYS, datos);
                     }
                     Snackbar.make(view, "Datos válidos", Snackbar.LENGTH_SHORT).show();
                 } else {
-                    //Conexión
                     Snackbar.make(view, "Datos inválidos", Snackbar.LENGTH_SHORT).show();
                 }
             }

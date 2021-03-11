@@ -26,6 +26,7 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
     List<Localizacion> localizacionList;
     Context context;
     Data data;
+
     public AdapterItemLocalizacion(List<Localizacion> localizacionList, Context context, Data data) {
         this.localizacionList = localizacionList;
         this.context = context;
@@ -56,7 +57,7 @@ public class AdapterItemLocalizacion extends RecyclerView.Adapter<AdapterItemLoc
                 ++clic[0];
                 if (clic[0] == 1) {
                     Intent intent = new Intent(context, LocalizacionFormActivity.class);
-                    intent.putExtra("Localizacion", localizacion);
+                    intent.putExtra("Localizacion", localizacionList.get(position));
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }

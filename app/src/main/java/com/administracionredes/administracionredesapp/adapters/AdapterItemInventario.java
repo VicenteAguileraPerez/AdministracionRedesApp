@@ -56,7 +56,7 @@ public class AdapterItemInventario extends RecyclerView.Adapter<AdapterItemInven
                 ++clic[0];
                 if (clic[0] == 1) {
                     Intent intent = new Intent(context, InventarioFormActivity.class);
-                    intent.putExtra("Inventario", inventario);
+                    intent.putExtra("Inventario", marioList.get(position));
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }

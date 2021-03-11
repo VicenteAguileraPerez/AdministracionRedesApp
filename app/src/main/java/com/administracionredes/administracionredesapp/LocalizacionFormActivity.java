@@ -21,7 +21,6 @@ public class LocalizacionFormActivity extends AppCompatActivity implements Statu
     private TextInputLayout textInputLayout_localizacion;
     private TextInputLayout textInputLayout_status;
     private TextInputLayout textInputLayout_observaciones;
-
     private MaterialButton materialButton_agregar;
     Localizacion localizacion;
 
@@ -29,12 +28,7 @@ public class LocalizacionFormActivity extends AppCompatActivity implements Statu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizacion_form);
-        //Antonio García
-
-        //Agregué archivos gradle
         setTitle("Localización");
-
-        //Se enlazan las variables con sus id's
         textInputLayout_nombre = findViewById(R.id.textInputLayout_nombre);
         textInputLayout_tipo = findViewById(R.id.textInputLayout_tipo);
         textInputLayout_localizacion = findViewById(R.id.textInputLayout_localizacion);
@@ -96,12 +90,16 @@ public class LocalizacionFormActivity extends AppCompatActivity implements Statu
     @Override
     public void status(String mensaje) {
         Toast.makeText(LocalizacionFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
-
-
+        if (mensaje.contains("exitosa")) {
+            clean();
+        }
     }
 
-
-
-
-
+    public void clean() {
+        textInputLayout_nombre.getEditText().setText("");
+        textInputLayout_observaciones.getEditText().setText("");
+        textInputLayout_status.getEditText().setText("");
+        textInputLayout_tipo.getEditText().setText("");
+        textInputLayout_localizacion.getEditText().setText("");
+    }
 }

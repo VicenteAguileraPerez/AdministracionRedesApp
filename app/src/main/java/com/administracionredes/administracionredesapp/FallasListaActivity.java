@@ -3,8 +3,10 @@ package com.administracionredes.administracionredesapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -53,6 +55,7 @@ public class FallasListaActivity extends AppCompatActivity implements Data, Stat
         arrayList = new ArrayList<>();
         for (Object o : data) {
             Fallas fallas = (Fallas) o;
+            Log.e("Error", fallas.getId() + fallas.getDispositivo());
             arrayList.add(fallas);
         }
         llenar(arrayList);

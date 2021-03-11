@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,7 @@ public class AdapterItemFallas extends RecyclerView.Adapter<AdapterItemFallas.Vi
                 ++clic[0];
                 if (clic[0] == 1) {
                     Intent intent = new Intent(context, FallasFormActivity.class);
-                    intent.putExtra("Fallas", fallas);
+                    intent.putExtra("Fallas", fallasList.get(position));
                     intent.putExtra("dato", true);
                     context.startActivity(intent);
                 }

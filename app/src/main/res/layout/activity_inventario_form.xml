@@ -33,14 +33,14 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="nombre_dispositivo"
+                android:hint="Nombre del dispositivo"
                 app:counterEnabled="true"
                 app:counterMaxLength="50">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
+                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
                     android:enabled="true"
                     android:inputType="textCapSentences"
                     android:maxLength="50" />
@@ -56,7 +56,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="tipo"
+                android:hint="Tipo"
                 app:counterEnabled="true"
                 app:counterMaxLength="50"
                 app:errorEnabled="true">
@@ -64,7 +64,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
+                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
                     android:enabled="true"
                     android:inputType="textCapSentences|textMultiLine"
                     android:maxLength="50" />
@@ -80,7 +80,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="status"
+                android:hint="Estado"
                 app:counterEnabled="true"
                 app:counterMaxLength="50"
                 app:errorEnabled="true">
@@ -126,8 +126,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="@color/azul"
-                android:text="Guardar device" />
-
+                android:text="Guardar" />
 
 
         </LinearLayout>

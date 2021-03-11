@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:839450727397:android:ba30418b5a201c89cc550c",
+        "mobilesdk_app_id": "1:839450727397:android:1c81b4a849f13434cc550c",
         "android_client_info": {
           "package_name": "com.administracionredes.administracionredesapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "839450727397-cfsdejr0u52gqlj6srm953jh20vj0fai.apps.googleusercontent.com",
+          "client_id": "839450727397-qugokivcl873qj1uet2kl12tblk1c543.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.administracionredes.administracionredesapp",
-            "certificate_hash": "febcc84c8840eb6432b92a5b6bcf0e170394c041"
+            "certificate_hash": "7491d73499099ebc615fd433ad0cfa3ae0c12617"
           }
         },
         {
