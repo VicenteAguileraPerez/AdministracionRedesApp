@@ -7,7 +7,7 @@ Esta es una aplicación desarrollada en la materia de **Administración de Redes
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 
-![Ícono de la aplicación](/imagenes/1.jpg "Ícono de la aplicación" {width=320 height=700})
+![Ícono de la aplicación](/imagenes/1.jpg){width="320px" height="700px"}
 
 ## Lista de Fallas
 
