@@ -33,14 +33,14 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="Nombre del dispositivo"
+                android:hint="nombre_dispositivo"
                 app:counterEnabled="true"
                 app:counterMaxLength="50">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
+                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
                     android:enabled="true"
                     android:inputType="textCapSentences"
                     android:maxLength="50" />
@@ -56,7 +56,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="Tipo"
+                android:hint="tipo"
                 app:counterEnabled="true"
                 app:counterMaxLength="50"
                 app:errorEnabled="true">
@@ -64,7 +64,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
                     android:enabled="true"
                     android:inputType="textCapSentences|textMultiLine"
                     android:maxLength="50" />
@@ -80,7 +80,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/white"
-                android:hint="Estado"
+                android:hint="status"
                 app:counterEnabled="true"
                 app:counterMaxLength="50"
                 app:errorEnabled="true">
@@ -88,7 +88,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZÑabcdefghijklmnñopqrstuvwxyz "
                     android:enabled="true"
                     android:inputType="textCapSentences|textMultiLine"
                     android:maxLength="50" />
@@ -125,8 +125,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/azul"
-                android:text="Guardar" />
+                android:backgroundTint="@color/azul_700"
+                android:text="Guardar device" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_mas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@android:drawable/ic_input_add"
+                app:tint="@color/white"
+                app:backgroundTint="@color/azul_700" />
+
         </LinearLayout>
 
     </ScrollView>

@@ -30,6 +30,6 @@ android:layout_height="match_parent">
     android:clickable="true"
     android:focusable="true"
     android:src="@android:drawable/ic_input_add"
-    app:backgroundTint="@color/azul"
+    app:backgroundTint="@color/azul_700"
     app:tint="@color/white" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
