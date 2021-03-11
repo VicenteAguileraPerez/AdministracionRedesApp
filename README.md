@@ -1,5 +1,6 @@
 # AdministracionRedesApp
 
+Esta es una aplicación desarrollada en la materia de **Administración de Redes**, la cual, fue diseñada para facilitar la gestión de las actividades de un **administrador de redes**.
 
 ## Ícono de la aplicación
 
@@ -131,4 +132,3 @@ Una vez ingresados los datos, deberá oprimir el botón "GUARDAR CONFIGURACIÓN"
 > Para editar las Configuraciones, deberá oprimir la configuración que desea editar, después, sólo debe modificar el texto del campo que desea editar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al botón "EDITAR CONFIGURACIÓN".
 
 ![Edición de configuración](/imagenes/configuracionEditar2.jpg)
-
