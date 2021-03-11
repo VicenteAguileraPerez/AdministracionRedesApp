@@ -109,5 +109,5 @@ Al mantener oprimido un Registro / Configuración, de inmediato aparecerá una a
 
 ### Edición de Configuración
 Para editar las Configuraciones, deberá oprimir la configuración que desea editar, después, sólo debe modificar el texto del campo que desea editar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al botón "EDITAR CONFIGURACIÓN".
-![Edición de configuración](/imagenes/configuracionEditar2.jpg)
 
+![Edición de configuración](/imagenes/configuracionEditar2.jpg)
