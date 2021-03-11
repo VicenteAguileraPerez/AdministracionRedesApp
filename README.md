@@ -19,7 +19,7 @@ Una vez ingresados los datos, deberá oprimir el botón "GUARDAR FALLA".
 
 ### Eliminación de Falla
 Al mantener oprimido un Registro / Fallas, de inmediato aparecerá una alerta cuestionando al usuario si desea eliminar la Falla seleccionada, deberá oprimir "SÍ" para poder eliminarla, en caso contrario, oprimir "NO".
-![Eliminación de falla](/imagenes/fallaEliminacion.jpg)
+![Eliminación de falla](/imagenes/fallaEliminacion.jpeg)
 
 ### Edición de Falla
 Para editar las Fallas, deberá oprimir la Falla que desea editar, después, sólo debe modificar el texto del campo que desea editar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al botón "EDITAR FALLA".
@@ -28,7 +28,7 @@ Para editar las Fallas, deberá oprimir la Falla que desea editar, después, só
 
 ## Lista de Localizaciones
 Es una lista la cual muestra información al sobre las diferentes localizaciones en las que se encuentran los dispositivos de red, así como características de los mismos.
-![Lista de localizaciones](/imagenes/localizacionesLista.jpg)
+![Lista de localizaciones](/imagenes/localizacionesLista2.jpg)
 
 
 ### Agregación de Localizaciones
@@ -52,7 +52,7 @@ Para eliminar localizaciones, es necesario dejar presionado por un momento la lo
 ### Edición de Localizaciones
 
 Para editar las localizaciones, deberá dar clic a la localización que desea editar, después, sólo debe modificar el texto del campo que desea cambiar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al  botón "EDITAR LOCALIZACIÓN".
-![Edición de localizaciones](/imagenes/localizacionEditar.jpg)
+![Edición de localizaciones](/imagenes/localizacionEditar2.jpg)
 
 
 ## Lista de Inventario
@@ -62,19 +62,19 @@ Es una lista en la cual puedes ver que aparatos están disponibles para el admin
 -Tipo
 -Status
 -Observaciones
-![Lista de inventario](/imagenes/inventarioLista.jpg)
+![Lista de inventario](/imagenes/inventarioLista2.jpg)
 
 
 ### Agregación de Inventario
 
 En este apartado podrás hacer el llenado para agregar un dispositivo llenando los campos de manera correcta y oprimiendo el botón de guardar para que así se puedan visualizar los resultados.
-![Agregación de inventario](/imagenes/inventarioAgregar.jpg)
+![Agregación de inventario](/imagenes/inventarioAgregar.jpeg)
 
 
 ### Eliminación de Inventario
 
 Para la eliminación de algún dispositivo simplemente debe de dejar presionado, a continuación aparecerá una pequeña ventana en la cual se observa un SI y un NO, presione SI para eliminar y NO por si se retracta de su decisión.
-![Eliminación de inventario](/imagenes/inventarioEliminar.jpg)
+![Eliminación de inventario](/imagenes/inventarioEliminar.jpeg)
 
 
 ### Edición de Inventario
@@ -104,10 +104,10 @@ Una vez ingresados los datos, deberá oprimir el botón "GUARDAR CONFIGURACIÓN"
 
 ### Eliminación de Configuración
 Al mantener oprimido un Registro / Configuración, de inmediato aparecerá una alerta cuestionando al usuario si desea eliminar la Configuración seleccionada, deberá oprimir "SÍ" para poder eliminarla, en caso contrario, oprimir "NO".
-![Eliminación de configuración](/imagenes/configuracionEliminar.jpg)
+![Eliminación de configuración](/imagenes/configuracionEliminar.jpeg)
 
 
 ### Edición de Configuración
 Para editar las Configuraciones, deberá oprimir la configuración que desea editar, después, sólo debe modificar el texto del campo que desea editar por el nuevo, una vez que haya modificado los datos deseados, deberá dar clic al botón "EDITAR CONFIGURACIÓN".
-![Edición de configuración](/imagenes/configuracionEditar.jpg)
+![Edición de configuración](/imagenes/configuracionEditar2.jpg)
 
