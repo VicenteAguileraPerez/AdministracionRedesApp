@@ -1,4 +1,4 @@
-# AdministracionRedesApp app
+# AdministracionRedesApp
 
 ## Ícono de la aplicación
 
