@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.administracionredes.administracionredesapp.helpers.Collections;
 import com.administracionredes.administracionredesapp.helpers.StaticHelper;
 import com.administracionredes.administracionredesapp.helpers.Status;
@@ -89,23 +88,19 @@ public class LocalizacionFormActivity extends AppCompatActivity implements Statu
             textInputLayout_status.getEditText().setText(localizacion.getEstatus());
             textInputLayout_tipo.getEditText().setText(localizacion.getTipo());
             textInputLayout_localizacion.getEditText().setText(localizacion.getLocalizacion());
-            materialButton_agregar.setText("Editar Localización");
+            materialButton_agregar.setText("Editar Localizacion");
         }
     }
 
     @Override
     public void status(String mensaje) {
         Toast.makeText(LocalizacionFormActivity.this, mensaje, Toast.LENGTH_SHORT).show();
-        if (mensaje.contains("exitosa")) {
-            clean();
-        }
+
+
     }
 
-    public void clean() {
-        textInputLayout_nombre.getEditText().setText("");
-        textInputLayout_observaciones.getEditText().setText("");
-        textInputLayout_status.getEditText().setText("");
-        textInputLayout_tipo.getEditText().setText("");
-        textInputLayout_localizacion.getEditText().setText("");
-    }
+
+
+
+
 }
